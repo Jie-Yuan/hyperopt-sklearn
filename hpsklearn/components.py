@@ -1226,7 +1226,7 @@ def _xgboost_hp_space(
 ########################################################
 ##==== XGBoost classifier/regressor constructors ====##
 ########################################################
-def xgboost_classification(name, objective='binary:logistic', **kwargs):
+def xgboost_classification(name, objective='binary:logistic', n_jobs=16, **kwargs):
     '''
     Return a pyll graph with hyperparameters that will construct
     a xgboost.XGBClassifier model.
@@ -1243,10 +1243,11 @@ def xgboost_classification(name, objective='binary:logistic', **kwargs):
 
     hp_space = _xgboost_hp_space(_name, **kwargs)
     hp_space['objective'] = objective
+    hp_space['n_jobs'] = n_jobs
     return scope.sklearn_XGBClassifier(**hp_space)
 
 
-def xgboost_regression(name, objective='reg:linear', **kwargs):
+def xgboost_regression(name, objective='reg:linear', n_jobs=16, **kwargs):
     '''
     Return a pyll graph with hyperparameters that will construct
     a xgboost.XGBRegressor model.
@@ -1266,6 +1267,7 @@ def xgboost_regression(name, objective='reg:linear', **kwargs):
 
     hp_space = _xgboost_hp_space(_name, **kwargs)
     hp_space['objective'] = objective
+    hp_space['n_jobs'] = n_jobs
     return scope.sklearn_XGBRegressor(**hp_space)
 
 
