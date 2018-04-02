@@ -8,7 +8,11 @@ See how to use hyperopt-sklearn through [examples](http://hyperopt.github.io/hyp
 or older
 [notebooks](http://nbviewer.ipython.org/github/hyperopt/hyperopt-sklearn/tree/master/notebooks)
 
-
+---
+```
+pip install git+https://github.com/Jie-Yuan/hyperopt-sklearn.git
+```
+---
 ## Installation
 
 Installation from a git clone using pip is supported:
